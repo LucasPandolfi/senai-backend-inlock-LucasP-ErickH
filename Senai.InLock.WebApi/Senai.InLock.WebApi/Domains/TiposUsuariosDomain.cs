@@ -5,10 +5,9 @@ using System.Threading.Tasks;
 
 namespace Senai.InLock.WebApi.Domains
 {
-    public class Estudios
+    public class TiposUsuariosDomain
     {
-        public int IdEstudio { get; set; }
-
-        public string NomeEstudio { get; set; }
+        public int IdTipoUsuario { get; set; }
+        public string NomeTipoUsuario { get; set; }
     }
 }

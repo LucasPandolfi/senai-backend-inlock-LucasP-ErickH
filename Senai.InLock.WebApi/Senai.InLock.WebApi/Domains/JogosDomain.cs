@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Senai.InLock.WebApi.Domains
 {
-    public class Jogos
+    public class JogosDomain
     {
         public int IdJogo { get; set; }
 

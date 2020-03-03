@@ -9,3 +9,14 @@ C:\Users\50345891848\Desktop\senai-backend-inlock-LucasP-ErickH\Senai.InLock.Web
 C:\Users\50345891848\Desktop\senai-backend-inlock-LucasP-ErickH\Senai.InLock.WebApi\Senai.InLock.WebApi\obj\Debug\netcoreapp2.1\Senai.InLock.WebApi.AssemblyInfoInputs.cache
 C:\Users\50345891848\Desktop\senai-backend-inlock-LucasP-ErickH\Senai.InLock.WebApi\Senai.InLock.WebApi\obj\Debug\netcoreapp2.1\Senai.InLock.WebApi.AssemblyInfo.cs
 C:\Users\50345891848\Desktop\senai-backend-inlock-LucasP-ErickH\Senai.InLock.WebApi\Senai.InLock.WebApi\obj\Debug\netcoreapp2.1\Senai.InLock.WebApi.RazorTargetAssemblyInfo.cache
+C:\Users\PICHAU\Desktop\senai-backend-inlock-LucasP-ErickH\Senai.InLock.WebApi\Senai.InLock.WebApi\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+C:\Users\PICHAU\Desktop\senai-backend-inlock-LucasP-ErickH\Senai.InLock.WebApi\Senai.InLock.WebApi\bin\Debug\netcoreapp2.1\Senai.InLock.WebApi.deps.json
+C:\Users\PICHAU\Desktop\senai-backend-inlock-LucasP-ErickH\Senai.InLock.WebApi\Senai.InLock.WebApi\bin\Debug\netcoreapp2.1\Senai.InLock.WebApi.runtimeconfig.json
+C:\Users\PICHAU\Desktop\senai-backend-inlock-LucasP-ErickH\Senai.InLock.WebApi\Senai.InLock.WebApi\bin\Debug\netcoreapp2.1\Senai.InLock.WebApi.runtimeconfig.dev.json
+C:\Users\PICHAU\Desktop\senai-backend-inlock-LucasP-ErickH\Senai.InLock.WebApi\Senai.InLock.WebApi\bin\Debug\netcoreapp2.1\Senai.InLock.WebApi.dll
+C:\Users\PICHAU\Desktop\senai-backend-inlock-LucasP-ErickH\Senai.InLock.WebApi\Senai.InLock.WebApi\obj\Debug\netcoreapp2.1\Senai.InLock.WebApi.csprojAssemblyReference.cache
+C:\Users\PICHAU\Desktop\senai-backend-inlock-LucasP-ErickH\Senai.InLock.WebApi\Senai.InLock.WebApi\obj\Debug\netcoreapp2.1\Senai.InLock.WebApi.RazorAssemblyInfo.cache
+C:\Users\PICHAU\Desktop\senai-backend-inlock-LucasP-ErickH\Senai.InLock.WebApi\Senai.InLock.WebApi\obj\Debug\netcoreapp2.1\Senai.InLock.WebApi.RazorAssemblyInfo.cs
+C:\Users\PICHAU\Desktop\senai-backend-inlock-LucasP-ErickH\Senai.InLock.WebApi\Senai.InLock.WebApi\obj\Debug\netcoreapp2.1\Senai.InLock.WebApi.AssemblyInfoInputs.cache
+C:\Users\PICHAU\Desktop\senai-backend-inlock-LucasP-ErickH\Senai.InLock.WebApi\Senai.InLock.WebApi\obj\Debug\netcoreapp2.1\Senai.InLock.WebApi.AssemblyInfo.cs
+C:\Users\PICHAU\Desktop\senai-backend-inlock-LucasP-ErickH\Senai.InLock.WebApi\Senai.InLock.WebApi\obj\Debug\netcoreapp2.1\Senai.InLock.WebApi.RazorTargetAssemblyInfo.cache
