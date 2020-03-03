@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Senai.InLock.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:Senai.InLock.WebApi.Controllers.EstudiosController">
+            <summary>
+            Controller responsável pelos endpoints referentes aos funcionarios
+            </summary>
+        </member>
+        <member name="M:Senai.InLock.WebApi.Controllers.EstudiosController.#ctor">
+            <summary>
+            Instancia este objeto para que haja a referência aos métodos no repositório
+            </summary>
+        </member>
+        <member name="M:Senai.InLock.WebApi.Controllers.EstudiosController.Get">
+            <summary>
+            Lista todos os estudios
+            </summary>
+            <returns>Retorna uma lista de estudios e um status code 200 - Ok</returns>
+            dominio/api/Estudios
+        </member>
+        <member name="M:Senai.InLock.WebApi.Controllers.EstudiosController.Post(Senai.InLock.WebApi.Domains.EstudiosDomain)">
+            <summary>
+            Cadastra um novo estudio
+            </summary>
+            <param name="novoEstudio">Objeto novoEstudio que será cadastrado</param>
+            <returns>Retorna os dados que foram enviados para cadastro e um status code 201 - Created</returns>
+            dominio/api/Estudios
+        </member>
+        <member name="M:Senai.InLock.WebApi.Controllers.EstudiosController.Delete(System.Int32)">
+            <summary>
+            Deleta um funcionário
+            </summary>
+            <param name="id">ID do estudio que será deletado</param>
+            <returns>Retorna um status code com uma mensagem de sucesso ou erro</returns>
+            dominio/api/Estudios/1
+        </member>
+        <member name="T:Senai.InLock.WebApi.Controllers.JogosController">
+            <summary>
+            Controller responsável pelos endpoints referentes aos funcionarios
+            </summary>
+        </member>
+        <member name="M:Senai.InLock.WebApi.Controllers.JogosController.#ctor">
+            <summary>
+            Instancia este objeto para que haja a referência aos métodos no repositório
+            </summary>
+        </member>
+        <member name="M:Senai.InLock.WebApi.Controllers.JogosController.Get">
+            <summary>
+            Lista todos os jogos
+            </summary>
+            <returns>Retorna uma lista de jogos e um status code 200 - Ok</returns>
+            dominio/api/Jogos
+        </member>
+        <member name="M:Senai.InLock.WebApi.Controllers.JogosController.Post(Senai.InLock.WebApi.Domains.JogosDomain)">
+            <summary>
+            Cadastra um novo estudio
+            </summary>
+            <param name="novoJogo">Objeto novoJogo que será cadastrado</param>
+            <returns>Retorna os dados que foram enviados para cadastro e um status code 201 - Created</returns>
+            dominio/api/Jogos
+        </member>
+        <member name="M:Senai.InLock.WebApi.Controllers.JogosController.Delete(System.Int32)">
+            <summary>
+            Deleta um jogo
+            </summary>
+            <param name="id">ID do jogo que será deletado</param>
+            <returns>Retorna um status code com uma mensagem de sucesso ou erro</returns>
+            dominio/api/Jogos/1
+        </member>
+        <member name="M:Senai.InLock.WebApi.Repositories.EstudiosRepository.DeletarEstudio(System.Int32)">
+            <summary>
+            Deleta um estudio existente
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Senai.InLock.WebApi.Repositories.EstudiosRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um funcionário através do ID
+            </summary>
+            <param name="id">ID do funcionário que será buscado</param>
+            <returns>Retorna um funcionário buscado</returns>
+        </member>
+        <member name="M:Senai.InLock.WebApi.Repositories.JogosRepository.DeletarJogo(System.Int32)">
+            <summary>
+            Deleta um jogo existente
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Senai.InLock.WebApi.Repositories.JogosRepository.BuscarJogoPorId(System.Int32)">
+            <summary>
+            Busca um jogo através do ID
+            </summary>
+            <param name="id">ID do jogo que será buscado</param>
+            <returns>Retorna um jogo buscado</returns>
+        </member>
+        <member name="M:Senai.InLock.WebApi.Repositories.TiposUsuariosRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um tipo de usuário através do ID
+            </summary>
+            <param name="id">ID do tipo de usuário que será buscado</param>
+            <returns>Retorna um tipo de usuário buscado</returns>
+        </member>
+        <member name="P:senai.InLock.WebApi.Controllers.LoginController._usuarioRepository">
+            <summary>
+            Cria um objeto _usuarioRepository que irá receber todos os métodos definidos na interface
+            </summary>
+        </member>
+        <member name="T:senai.InLock.WebApi.Controllers.UsuariosController">
+            <summary>
+            Controller responsável pelos endpoints referentes aos usuários
+            </summary>
+        </member>
+        <member name="P:senai.InLock.WebApi.Controllers.UsuariosController._usuarioRepository">
+            <summary>
+            Cria um objeto _usuarioRepository que irá receber todos os métodos definidos na interface
+            </summary>
+        </member>
+        <member name="M:senai.InLock.WebApi.Controllers.UsuariosController.#ctor">
+            <summary>
+            Instancia este objeto para que haja a referência aos métodos no repositório
+            </summary>
+        </member>
+        <member name="M:senai.InLock.WebApi.Controllers.UsuariosController.Get">
+            Lista todos os usuários
+        </member>
+        <!--Comentário XML mal formado ignorado para o membro "M:senai.InLock.WebApi.Controllers.UsuariosController.Post(Senai.InLock.WebApi.Domains.UsuariosDomain)" -->-->
+        <member name="M:senai.InLock.WebApi.Controllers.UsuariosController.Put(System.Int32,Senai.InLock.WebApi.Domains.UsuariosDomain)">
+            <summary>
+            Atualiza um usuário existente
+            </summary>
+            <param name="id">ID do usuário que será atualizado</param>
+            <param name="usuarioAtualizado">Objeto usuarioAtualizado que será atualizado</param>
+            <returns>Retorna um status code</returns>
+            dominio/api/Usuarios/1
+        </member>
+        <member name="T:senai.InLock.WebApi.Interfaces.IUsuariosRepository">
+            Interface responsável pelo repositório UsuarioRepository
+        </member>
+        <member name="M:senai.InLock.WebApi.Interfaces.IUsuariosRepository.Listar">
+            Lista todos os usuários
+        </member>
+        <member name="M:senai.InLock.WebApi.Interfaces.IUsuariosRepository.BuscarPorId(System.Int32)">
+            Busca um usuários através do ID
+        </member>
+        <!-- Comentário XML mal formado ignorado para o membro "M:senai.InLock.WebApi.Interfaces.IUsuariosRepository.Atualizar(System.Int32,Senai.InLock.WebApi.Domains.UsuariosDomain)" -->
+        <!-- Comentário XML mal formado ignorado para o membro "M:senai.InLock.WebApi.Interfaces.IUsuariosRepository.Deletar(System.Int32)" -->
+        <member name="T:senai.Peoples.WebApi.Repositories.UsuariosRepository">
+            <summary>
+            Repositório dos Usuários
+            </summary>
+        </member>
+        <member name="M:senai.Peoples.WebApi.Repositories.UsuariosRepository.Cadastrar(Senai.InLock.WebApi.Domains.UsuariosDomain)">
+            Cadastra um novo usuário
+        </member>
+        <member name="M:senai.Peoples.WebApi.Repositories.UsuariosRepository.Listar">
+            Lista todos os usuários
+        </member>
+        <member name="M:senai.Peoples.WebApi.Repositories.UsuariosRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um jogo através do ID
+            </summary>
+            <param name="id">ID do jogo que será buscado</param>
+            <returns>Retorna um jogo buscado</returns>
+        </member>
+        <member name="M:senai.Peoples.WebApi.Repositories.UsuariosRepository.BuscarPorEmailSenha(System.String,System.String)">
+            <summary>
+            Valida o usuário
+            </summary>
+            <param name="email">E-mail do usuário</param>
+            <param name="senha">Senha do usuário</param>
+            <returns>Retorna um usuário validado</returns>
+        </member>
+    </members>
+</doc>

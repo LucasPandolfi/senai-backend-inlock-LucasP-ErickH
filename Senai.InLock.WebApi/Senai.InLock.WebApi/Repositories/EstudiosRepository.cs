@@ -8,20 +8,19 @@ using System.Threading.Tasks;
 
 namespace Senai.InLock.WebApi.Repositories
 {
-    public class JogosRepository : IJogosRepository
+    public class EstudiosRepository : IEstudiosRepository
     {
-
         //private string stringConexao = "Data Source=DEV7\\SQLEXPRESS; initial catalog=Peoples; integrated security=true;";
         private string stringConexao = "Data Source=DEV7\\SQLEXPRESS; initial catalog=InLock_Games_Tarde ; user Id=sa; pwd=sa@132";
 
-        public List<JogosDomain> ListarJogos()
+        public List<EstudiosDomain> ListarEstudios()
         {
-            List<JogosDomain> jogos = new List<JogosDomain>();
+            List<EstudiosDomain> estudios = new List<EstudiosDomain>();
 
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
                 // Declara a instrução a ser executada
-                string queryJogos = "SELECT IdJogo, NomeJogo, DescricaoJogo, DataLancamento, ValorJogo, IdEstudio FROM Jogos";
+                string queryEstudios = "SELECT IdEstudio, NomeEstudio FROM Estudios";
 
                 // Abre a conexão com o banco de dados
                 con.Open();
@@ -29,7 +28,7 @@ namespace Senai.InLock.WebApi.Repositories
                 // Declara o SqlDataReader para receber os dados do banco de dados
                 SqlDataReader rdr;
 
-                using (SqlCommand cmd = new SqlCommand(queryJogos, con))
+                using (SqlCommand cmd = new SqlCommand(queryEstudios, con))
                 {
                     // Executa a query e armazena os dados no rdr
                     rdr = cmd.ExecuteReader();
@@ -38,47 +37,35 @@ namespace Senai.InLock.WebApi.Repositories
                     while (rdr.Read())
                     {
                         // Instancia um objeto funcionario 
-                        JogosDomain jogo = new JogosDomain
-                        {                         
-                            IdJogo = Convert.ToInt32(rdr["IdJogo"])                           
-                            ,
-                            NomeJogo = rdr["NomeJogo"].ToString()                           
-                            ,
-                            DescricaoJogo = rdr["DescricaoJogo"].ToString()
-                            ,
-                            DataLancamento = Convert.ToDateTime(rdr["DataLancamento"])
-                            ,
-                            ValorJogo = Convert.ToInt32(rdr["ValorJogo"])
-                            ,
+                        EstudiosDomain estudio = new EstudiosDomain
+                        {
                             IdEstudio = Convert.ToInt32(rdr["IdEstudio"])
+                            ,
+                            NomeEstudio = rdr["NomeEstudio"].ToString()
                         };
 
-                        jogos.Add(jogo);
+                        estudios.Add(estudio);
                     }
                 }
             }
-            return jogos;
+            return estudios;
         }
 
 
-        public void CadastrarJogos(JogosDomain novoJogo)
+        public void CadastrarEstudios(EstudiosDomain novoEstudio)
         {
             // Declara a SqlConnection passando a string de conexão
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
                 // Declara a query que será executada
-                string queryInsert = "INSERT INTO Jogos(NomeJogo, DescricaoJogo, DataLancamento, ValorJogo, IdEstudio) " +
-                                     "VALUES (@NomeJogo, @DescricaoJogo, @DataLancamento, @ValorJogo, @IdEstudio)";
+                string queryInsert = "INSERT INTO Estudios(NomeEstudio) " +
+                                     "VALUES (@NomeEstudio)";
 
                 // Declara o comando passando a query e a conexão
                 using (SqlCommand cmd = new SqlCommand(queryInsert, con))
                 {
                     // Passa o valor do parâmetro
-                    cmd.Parameters.AddWithValue("@NomeJogo", novoJogo.NomeJogo);
-                    cmd.Parameters.AddWithValue("@DescricaoJogo", novoJogo.DescricaoJogo);
-                    cmd.Parameters.AddWithValue("@DataLancamento", novoJogo.DataLancamento);
-                    cmd.Parameters.AddWithValue("@ValorJogo", novoJogo.ValorJogo);
-                    cmd.Parameters.AddWithValue("@IdEstudio", novoJogo.IdEstudio);
+                    cmd.Parameters.AddWithValue("@NomeEstudio", novoEstudio.NomeEstudio);
 
                     // Abre a conexão com o banco de dados
                     con.Open();
@@ -90,17 +77,18 @@ namespace Senai.InLock.WebApi.Repositories
         }
 
 
+
         /// <summary>
-        /// Deleta um jogo existente
+        /// Deleta um estudio existente
         /// </summary>
         /// <param name="id"></param>
-        public void DeletarJogo(int id)
+        public void DeletarEstudio(int id)
         {
             // Declara a conexão passando a string de conexão
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
                 // Declara a query que será executada passando o valor como parâmetro
-                string queryDelete = "DELETE FROM Jogos WHERE IdJogo = @ID";
+                string queryDelete = "DELETE FROM Estudios WHERE IdEstudio = @ID";
 
                 // Declara o comando passando a query e a conexão
                 using (SqlCommand cmd = new SqlCommand(queryDelete, con))
@@ -118,19 +106,20 @@ namespace Senai.InLock.WebApi.Repositories
         }
 
 
+
         /// <summary>
-        /// Busca um jogo através do ID
+        /// Busca um funcionário através do ID
         /// </summary>
-        /// <param name="id">ID do jogo que será buscado</param>
-        /// <returns>Retorna um jogo buscado</returns>
-        public JogosDomain BuscarJogoPorId(int id)
+        /// <param name="id">ID do funcionário que será buscado</param>
+        /// <returns>Retorna um funcionário buscado</returns>
+        public EstudiosDomain BuscarPorId(int id)
         {
             // Declara a conexão passando a string de conexão
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
                 // Declara a query que será executada
-                string querySelectById = "SELECT IdJogo, NomeJogo FROM Jogos" +
-                                        " WHERE IdJogo = @ID";
+                string querySelectById = "SELECT IdEstudio, NomeEstudio FROM Estudios" +
+                                        " WHERE IdEstudio = @ID";
 
                 // Abre a conexão com o banco de dados
                 con.Open();
@@ -150,17 +139,17 @@ namespace Senai.InLock.WebApi.Repositories
                     // Caso o resultado da query possua registro
                     if (rdr.Read())
                     {
-                        // Instancia um objeto jogo 
-                        JogosDomain jogo = new JogosDomain
+                        // Instancia um objeto funcionario 
+                        EstudiosDomain estudio = new EstudiosDomain
                         {
-                            // Atribui à propriedade IdFuncionario o valor da coluna "IdJogo" da tabela do banco
-                            IdJogo = Convert.ToInt32(rdr["IdJogo"])
+                            // Atribui à propriedade IdFuncionario o valor da coluna "IdFuncionario" da tabela do banco
+                            IdEstudio = Convert.ToInt32(rdr["IdEstudio"])
                             ,
-                            NomeJogo = rdr["NomeJogo"].ToString()
+                            NomeEstudio = rdr["NomeEstudio"].ToString()
                         };
 
-                        // Retorna o jogo buscado
-                        return jogo;
+                        // Retorna o funcionário buscado
+                        return estudio;
                     }
 
                     // Caso o resultado da query não possua registros, retorna null
