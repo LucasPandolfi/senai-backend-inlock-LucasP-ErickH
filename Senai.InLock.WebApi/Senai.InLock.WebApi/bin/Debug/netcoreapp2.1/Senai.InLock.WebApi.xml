@@ -108,6 +108,13 @@
             Cria um objeto _usuarioRepository que irá receber todos os métodos definidos na interface
             </summary>
         </member>
+        <member name="M:senai.InLock.WebApi.Controllers.LoginController.Post(Senai.InLock.WebApi.ViewModels.LoginViewModel)">
+             <summary>
+            Login do usuario
+             </summary>
+             <returns>Retorna um usuario e um status code 200 - Ok</returns>
+             dominio/api/Jogos
+        </member>
         <member name="T:senai.InLock.WebApi.Controllers.UsuariosController">
             <summary>
             Controller responsável pelos endpoints referentes aos usuários
@@ -124,9 +131,19 @@
             </summary>
         </member>
         <member name="M:senai.InLock.WebApi.Controllers.UsuariosController.Get">
-            Lista todos os usuários
+            <summary>
+            Lista todos os usuarios
+            </summary>
+            <returns>Retorna uma lista de usuarios e um status code 200 - Ok</returns>
+            dominio/api/Jogos
         </member>
-        <!--Comentário XML mal formado ignorado para o membro "M:senai.InLock.WebApi.Controllers.UsuariosController.Post(Senai.InLock.WebApi.Domains.UsuariosDomain)" -->-->
+        <member name="M:senai.InLock.WebApi.Controllers.UsuariosController.Post(Senai.InLock.WebApi.Domains.UsuariosDomain)">
+            <summary>
+            Cdastra um novo usuario
+            </summary>
+            <returns>Retorna uma lista de usuarios e um status code 200 - Ok</returns>
+            dominio/api/Jogos
+        </member>
         <member name="M:senai.InLock.WebApi.Controllers.UsuariosController.Put(System.Int32,Senai.InLock.WebApi.Domains.UsuariosDomain)">
             <summary>
             Atualiza um usuário existente
@@ -145,8 +162,8 @@
         <member name="M:senai.InLock.WebApi.Interfaces.IUsuariosRepository.BuscarPorId(System.Int32)">
             Busca um usuários através do ID
         </member>
-        <!-- Comentário XML mal formado ignorado para o membro "M:senai.InLock.WebApi.Interfaces.IUsuariosRepository.Atualizar(System.Int32,Senai.InLock.WebApi.Domains.UsuariosDomain)" -->
-        <!-- Comentário XML mal formado ignorado para o membro "M:senai.InLock.WebApi.Interfaces.IUsuariosRepository.Deletar(System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:senai.InLock.WebApi.Interfaces.IUsuariosRepository.Atualizar(System.Int32,Senai.InLock.WebApi.Domains.UsuariosDomain)" -->
+        <!-- Badly formed XML comment ignored for member "M:senai.InLock.WebApi.Interfaces.IUsuariosRepository.Deletar(System.Int32)" -->
         <member name="T:senai.Peoples.WebApi.Repositories.UsuariosRepository">
             <summary>
             Repositório dos Usuários

@@ -23,5 +23,7 @@ namespace Senai.InLock.WebApi.Domains
 
         [Required(ErrorMessage = "O id do estudio é obrigatório")]
         public int IdEstudio { get; set; }
+
+        public EstudiosDomain Estudios { get; set;}
     }
 }

@@ -32,7 +32,12 @@ namespace senai.InLock.WebApi.Controllers
         {
             _usuarioRepository = new UsuariosRepository();
         }
-        
+
+        /// <summary>
+        ///Login do usuario
+        /// </summary>
+        /// <returns>Retorna um usuario e um status code 200 - Ok</returns>
+        /// dominio/api/Jogos
         [HttpPost]
         public IActionResult Post(LoginViewModel login)
         {

@@ -9,7 +9,8 @@ namespace Senai.InLock.WebApi.Repositories
 {
     public class TiposUsuariosRepository
     {
-        private string stringConexao = "Data Source=DEV7\\SQLEXPRESS; initial catalog=InLock_Games_Tarde ; user Id=sa; pwd=sa@132";
+        //private string stringConexao = "Data Source=DEV7\\SQLEXPRESS; initial catalog=InLock_Games_Tarde ; user Id=sa; pwd=sa@132";
+        private string stringConexao = "Data Source=WIN-T3EDO5059Q\\SQLEXPRESS; initial catalog= InLock_Games_Tarde; integrated security=true;";
 
 
         public List<TiposUsuariosDomain> ListarTipoUsuario()

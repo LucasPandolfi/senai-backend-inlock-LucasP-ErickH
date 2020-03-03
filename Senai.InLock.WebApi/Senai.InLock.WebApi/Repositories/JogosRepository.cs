@@ -11,8 +11,8 @@ namespace Senai.InLock.WebApi.Repositories
     public class JogosRepository : IJogosRepository
     {
 
-        //private string stringConexao = "Data Source=DEV7\\SQLEXPRESS; initial catalog=Peoples; integrated security=true;";
-        private string stringConexao = "Data Source=DEV7\\SQLEXPRESS; initial catalog=InLock_Games_Tarde ; user Id=sa; pwd=sa@132";
+        private string stringConexao = "Data Source=WIN-T3EDO5059Q\\SQLEXPRESS; initial catalog= InLock_Games_Tarde; integrated security=true;";
+        //private string stringConexao = "Data Source=DEV7\\SQLEXPRESS; initial catalog=InLock_Games_Tarde ; user Id=sa; pwd=sa@132";
 
         public List<JogosDomain> ListarJogos()
         {
@@ -21,7 +21,7 @@ namespace Senai.InLock.WebApi.Repositories
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
                 // Declara a instrução a ser executada
-                string queryJogos = "SELECT IdJogo, NomeJogo, DescricaoJogo, DataLancamento, ValorJogo, IdEstudio FROM Jogos";
+                string queryJogos = "SELECT IdJogo, NomeJogo, DescricaoJogo, DataLancamento, ValorJogo, Estudios.IdEstudio, Estudios.NomeEstudio FROM Jogos INNER JOIN Estudios ON Estudios.IdEstudio = Jogos.IdEstudio";
 
                 // Abre a conexão com o banco de dados
                 con.Open();
@@ -39,10 +39,10 @@ namespace Senai.InLock.WebApi.Repositories
                     {
                         // Instancia um objeto funcionario 
                         JogosDomain jogo = new JogosDomain
-                        {                         
-                            IdJogo = Convert.ToInt32(rdr["IdJogo"])                           
+                        {
+                            IdJogo = Convert.ToInt32(rdr["IdJogo"])
                             ,
-                            NomeJogo = rdr["NomeJogo"].ToString()                           
+                            NomeJogo = rdr["NomeJogo"].ToString()
                             ,
                             DescricaoJogo = rdr["DescricaoJogo"].ToString()
                             ,
@@ -51,6 +51,13 @@ namespace Senai.InLock.WebApi.Repositories
                             ValorJogo = Convert.ToInt32(rdr["ValorJogo"])
                             ,
                             IdEstudio = Convert.ToInt32(rdr["IdEstudio"])
+                            ,
+                            Estudios = new EstudiosDomain()
+                            {
+                             IdEstudio = Convert.ToInt32(rdr["IdEstudio"])
+                             ,
+                             NomeEstudio = rdr["NomeEstudio"].ToString()
+                            }
                         };
 
                         jogos.Add(jogo);

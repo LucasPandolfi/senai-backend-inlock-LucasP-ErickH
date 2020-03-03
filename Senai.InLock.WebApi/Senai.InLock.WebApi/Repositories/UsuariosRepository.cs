@@ -14,7 +14,8 @@ namespace senai.Peoples.WebApi.Repositories
     public class UsuariosRepository : IUsuariosRepository
     {
 
-        private string stringConexao = "Data Source=DEV7\\SQLEXPRESS; initial catalog=InLock_Games_Tarde ; user Id=sa; pwd=sa@132";
+        //private string stringConexao = "Data Source=DEV7\\SQLEXPRESS; initial catalog=InLock_Games_Tarde ; user Id=sa; pwd=sa@132";
+        private string stringConexao = "Data Source=WIN-T3EDO5059Q\\SQLEXPRESS; initial catalog= InLock_Games_Tarde; integrated security=true;";
 
 
         public void Atualizar(int id, UsuariosDomain UsuarioAtualizado)
@@ -89,7 +90,7 @@ namespace senai.Peoples.WebApi.Repositories
 
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
-                string querySelectAll = "SELECT U.IdUsuario, U.Email, U.IdTipoUsuario, TU.Titulo FROM Usuarios U INNER JOIN TiposUsuario TU ON U.IdTipoUsuario = TU.IdTipoUsuario";
+                string querySelectAll = "SELECT U.IdUsuario, U.Email, U.IdTipoUsuario, TU.NomeTipoUsuario FROM Usuarios U INNER JOIN TiposUsuarios TU ON U.IdTipoUsuario = TU.IdTipoUsuario";
 
                 con.Open();
 
@@ -107,7 +108,8 @@ namespace senai.Peoples.WebApi.Repositories
                             ,
                             Email = rdr["Email"].ToString()
                             ,
-                            IdTipoUsuario = Convert.ToInt32(rdr["IdTipoUsuario"]),
+                            IdTipoUsuario = Convert.ToInt32(rdr["IdTipoUsuario"])
+                            ,
                             TipoUsuario = new TiposUsuariosDomain
                             {
                                 IdTipoUsuario = Convert.ToInt32(rdr["IdTipoUsuario"])
@@ -191,7 +193,7 @@ namespace senai.Peoples.WebApi.Repositories
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
                 // Define a query a ser executada no banco
-                string querySelect = "SELECT U.IdUsuario, U.Email, U.IdTipoUsuario, TU.Titulo FROM Usuarios U INNER JOIN TiposUsuario TU ON U.IdTipoUsuario = TU.IdTipoUsuario WHERE Email = @Email AND Senha = @Senha";
+                string querySelect = "SELECT U.IdUsuario, U.Email, U.IdTipoUsuario, TU.NomeTipoUsuario FROM Usuarios U INNER JOIN TiposUsuarios TU ON U.IdTipoUsuario = TU.IdTipoUsuario WHERE Email = @Email AND Senha = @Senha";
 
                 // Define o comando passando a query e a conexão
                 using (SqlCommand cmd = new SqlCommand(querySelect, con))
@@ -223,7 +225,7 @@ namespace senai.Peoples.WebApi.Repositories
                             {
                                 IdTipoUsuario = Convert.ToInt32(rdr["IdTipoUsuario"])
                                 ,
-                                NomeTipoUsuario = rdr["Titulo"].ToString()
+                                NomeTipoUsuario = rdr["NomeTipoUsuario"].ToString()
                             }
                         };
 

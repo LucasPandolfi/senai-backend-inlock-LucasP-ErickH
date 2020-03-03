@@ -35,8 +35,11 @@ namespace senai.InLock.WebApi.Controllers
             _usuarioRepository = new UsuariosRepository();
         }
 
-        /// Lista todos os usuários
-
+        /// <summary>
+        /// Lista todos os usuarios
+        /// </summary>
+        /// <returns>Retorna uma lista de usuarios e um status code 200 - Ok</returns>
+        /// dominio/api/Jogos
         [Authorize(Roles = "1")]    // Somente o tipo de usuário 1 (administrador) pode acessar o endpoint
         [HttpGet]
         public IActionResult Get()
@@ -46,14 +49,16 @@ namespace senai.InLock.WebApi.Controllers
         }
 
         /// <summary>
-        /// Cadastra um novo usuário
-
+        /// Cdastra um novo usuario
+        /// </summary>
+        /// <returns>Retorna uma lista de usuarios e um status code 200 - Ok</returns>
+        /// dominio/api/Jogos
         [HttpPost]
         public IActionResult Post(UsuariosDomain novoUsuario)
         {
             _usuarioRepository.Cadastrar(novoUsuario);
 
-            return Created("http://localhost:5000/api/", novoUsuario);
+            return Created("http://localhost:5000/api/Usuarios", novoUsuario);
         }
 
 
@@ -70,7 +75,7 @@ namespace senai.InLock.WebApi.Controllers
         public IActionResult Put(int id, UsuariosDomain usuarioAtualizado)
         {
             // Cria um objeto usuarioBuscado que irá receber o usuário buscado no banco de dados
-            UsuariosDomain usuarioBuscado = _usuarioRepository.BuscarPorId(id); ///////////////////////MUDAR
+            UsuariosDomain usuarioBuscado = _usuarioRepository.BuscarPorId(id); 
 
             if (usuarioBuscado != null)
             {
