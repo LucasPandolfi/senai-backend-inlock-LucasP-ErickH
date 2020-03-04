@@ -1,4 +1,5 @@
 ﻿using Senai.InLock.WebApi.Domains;
+using Senai.InLock.WebApi.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Senai.InLock.WebApi.Repositories
 {
-    public class TiposUsuariosRepository
+    public class TiposUsuariosRepository : ITiposUsuariosRepository
     {
         //private string stringConexao = "Data Source=DEV7\\SQLEXPRESS; initial catalog=InLock_Games_Tarde ; user Id=sa; pwd=sa@132";
         private string stringConexao = "Data Source=WIN-T3EDO5059Q\\SQLEXPRESS; initial catalog= InLock_Games_Tarde; integrated security=true;";
